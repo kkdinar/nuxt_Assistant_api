@@ -1,0 +1,14 @@
+{
+  "name": "nuxt_Assistant_api",
+  "version": "1.0.0",
+  "dependencies": {
+    "@koa/router": "10.0.0",
+    "@prisma/client": "^2.22.0",
+    "koa": "2.13.0",
+    "koa-bodyparser": "4.3.0",
+    "koa-cors": "0.0.16"
+  },
+  "devDependencies": {
+    "prisma": "^2.22.0"
+  }
+}
