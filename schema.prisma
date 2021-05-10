@@ -1,0 +1,35 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./sqlite/main.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Document {
+  id            BigInt      @default(autoincrement()) @id
+  name          String
+  tableName     String      @unique
+  description   String?
+  parent        BigInt?
+  createdAt     DateTime
+  updatedAt     DateTime    @default(now())
+  docColumns   DocColumn[]
+
+  @@map("a_Document")
+}
+
+model DocColumn {
+  id            BigInt      @default(autoincrement()) @id
+  name          String
+  columnName    String      @unique
+  description   String?
+  dataTypes     String
+  createdAt     DateTime
+  updatedAt     DateTime    @default(now())
+  document      Document  @relation(fields: [documentID], references: [id])
+  documentID    BigInt
+
+  @@map("a_DocColumn")
+}
