@@ -21,6 +21,8 @@ router.post("/api", routes.post);
 
 router.delete("/api", routes.delete);
 
+router.get("/migrateDB", routes.migrateDB);
+
 app.use(router.routes())
 
 app.listen(config.main_port);

@@ -1,11 +1,20 @@
 //app.listen()
 module.exports.main_port = 3001;
 
+module.exports.dbConfig ={
+    user: 'postgres',
+    host: 'localhost',
+    database: 'postgres',
+    password: 'assistant',
+    port: 5432,
+  }
+
 //Подключение к БД sqlite3/main.db Windows
-module.exports.dbConfig = {
+/*module.exports.dbConfig = {
     dialect: 'sqlite',
     storage: './sqlite/main.db'
 };
+*/
 
 //npx prisma migrate - помощь
 //npx prisma migrate reset - всё сбросить
